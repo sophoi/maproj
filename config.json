@@ -1,0 +1,35 @@
+{
+  "start-date": "20150311",
+  "end-date": "!yesterday",
+  "tables": [
+    { "table-name": "madman"
+    , "file-pattern": "chronicle/2015/03/20/madman.20150320.txt.gz"
+    , "header-line": 1
+    , "enabled": true
+    , "skip-days": "20150316"
+    }
+  , { "table-name": "starwar"
+    , "file-pattern": "chronicle/2015/03/20/starwar.20150320.txt"
+    , "start-line": 2
+    }
+  , { "table-name": "wire"
+    , "file-pattern": "wire"
+    , "header-line": 2
+    , "start-line": 4
+    , "end-line": 13
+    }
+  , { "table-name": "dragonfly"
+    , "file-pattern": "dragonfly"
+    , "header-line": 2
+    , "header-line-mod": "insert at position 2 'extra-header'"
+    , "start-line": 15
+    , "end-line": 24
+    , "column-mod": [2, "trim on left; trim on right"]
+    }
+  , { "table-name": "fargo"
+    , "file-pattern": "fargo"
+    , "start-pattern": { "pattern": "Summary", "offset": 1 }
+    , "end-pattern":   { "pattern": "!empty",  "offset": 0 }
+    }
+  ]
+}

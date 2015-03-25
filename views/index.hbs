@@ -1,0 +1,67 @@
+<h1><a class="title-home" href='/'>{{title}}</a></h1>
+<br/>
+
+<div id="block-container" style="width:100%;">
+<div style="display:inline-block;width:60%;vertical-align:top">
+
+<div class="dropdown theme-dropdown clearfix">
+    <div class="btn-toolbar" role="toolbar">
+    <div class="btn-group">
+        <a href="shiftLeft" role="button" class="btn btn-default" aria-label="Left Shift">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true">
+            </span></a>
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+            {{implicit_val}}
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              {{#dates}}
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="{{v}}">{{v}}</a></li>
+              {{/dates}}
+            </ul>
+        <!--button type="button" class="btn btn-default" aria-label="{{implicit_val}}">
+            <span>Implicit: {{implicit_dim}}</span></button-->
+        <a href="shiftRight" role="button" class="btn btn-default" aria-label="Right Shift">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">
+            </span></a>
+        <a href="switchRolCol" role="button" class="btn btn-default" aria-label="Switch Row/Col">
+            <span class="glyphicon glyphicon-random" aria-hidden="true">
+            </span></a>
+    </div>
+    </div>
+</div>
+
+<table id="data-table" class="table table-striped">
+<caption>{{tname}}</caption>
+<tbody>
+    <tr>
+        {{#ths}}
+        <th> {{v}} </th>
+        {{/ths}}
+    </tr>
+    {{#rows}}
+    <tr>
+        {{#cells}}
+        <td> {{v}} </td>
+        {{/cells}}
+    </tr>
+    {{/rows}}
+</tbody>
+</table>
+</div>
+
+<div id="chart-container" style="display:inline-block;width:39%;"></div>
+
+</div>
+
+<script type="text/javascript">
+$(function () { 
+    var hcjs = '{{hcjs}}'.replace(/&quot;/g, '"');
+    hcjs = JSON.parse(hcjs);
+    hcjs.chart = { type: 'line' };
+    hcjs.plotOptions = {
+            series: { allowPointSelect: true, animation: false }
+    };
+    $('#chart-container').highcharts(hcjs);
+});
+
+<{{!}}/script>

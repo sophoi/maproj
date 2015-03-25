@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a.title-home:link {
+  color: #000066;
+  text-decoration: none;
+}
+a.title-home:visited {
+  color: #000066;
+  text-decoration: none;
+}
+a.title-home:hover {
+  color: #000066;
+  text-decoration: none;
+}
+a.title-home:active {
+  color: #000066;
+  text-decoration: none;
+}
+
+table#data-table {
+  align: top;
+}
